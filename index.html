@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BNI引荐金额计算器</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>BNI引荐金额计算器</h1>
+        
+        <div class="section-title">活动参与数据</div>
+        <div class="section-subtitle">请输入各项BNI活动的参与次数</div>
+        <div class="input-section">
+            <div class="input-group">
+                <label for="meetings">会议出席</label>
+                <input type="number" id="meetings" min="0" value="0">
+                <div class="amount-info">500元/次</div>
+            </div>
+            <div class="input-group">
+                <label for="visits">企业走访</label>
+                <input type="number" id="visits" min="0" value="0">
+                <div class="amount-info">500元/次</div>
+            </div>
+            <div class="input-group">
+                <label for="oneOnOne">一对一交流</label>
+                <input type="number" id="oneOnOne" min="0" value="0">
+                <div class="amount-info">500元/次</div>
+            </div>
+            <div class="input-group">
+                <label for="invitations">邀约嘉宾</label>
+                <input type="number" id="invitations" min="0" value="0">
+                <div class="amount-info">500元/次</div>
+            </div>
+            <div class="input-group">
+                <label for="introductions">15秒介绍</label>
+                <input type="number" id="introductions" min="0" value="0">
+                <div class="amount-info">500元/次</div>
+            </div>
+            <div class="input-group">
+                <label for="speeches">6分钟演讲</label>
+                <input type="number" id="speeches" min="0" value="0">
+                <div class="amount-info">5000元/次</div>
+            </div>
+            <div class="input-group">
+                <label for="training">参加培训</label>
+                <input type="number" id="training" min="0" value="0">
+                <div class="amount-info">500元/次</div>
+            </div>
+            <div class="input-group">
+                <label for="years">BNI年限</label>
+                <input type="number" id="years" min="0" value="0">
+                <div class="amount-info">5%/年</div>
+            </div>
+        </div>
+        
+        <div class="section-title">身份与职位</div>
+        <div class="input-section">
+            <div class="input-group">
+                <label for="goldMember">金章会员</label>
+                <select id="goldMember">
+                    <option value="0">否</option>
+                    <option value="1">是</option>
+                </select>
+                <div class="amount-info">+20%</div>
+            </div>
+            <div class="input-group">
+                <label for="leader">担任组长</label>
+                <select id="leader">
+                    <option value="0">否</option>
+                    <option value="1">是</option>
+                </select>
+                <div class="amount-info">+10%</div>
+            </div>
+            <div class="input-group">
+                <label for="lt">担任LT</label>
+                <select id="lt">
+                    <option value="0">否</option>
+                    <option value="1">是</option>
+                </select>
+                <div class="amount-info">+15%</div>
+            </div>
+            <div class="input-group">
+                <label for="ambassador">董顾大使</label>
+                <select id="ambassador">
+                    <option value="0">否</option>
+                    <option value="1">是</option>
+                </select>
+                <div class="amount-info">+25%</div>
+            </div>
+        </div>
+        <button id="calculateBtn">计算引荐金额</button>
+        <div id="result"></div>
+        
+        <div class="formula-section">
+            <h3>计算公式说明</h3>
+            <div class="formula">
+                <p><strong>基础金额</strong> = 会议出席×500 + 企业走访×500 + 一对一×500 + 邀约嘉宾×500 + 15秒介绍×500 + 6分钟演讲×5000 + 培训×500</p>
+                <p><strong>最终金额</strong> = 基础金额 × (1 + 年限×5% + 金章20% + LT15% + 董顾大使25% + 组长10%)</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
